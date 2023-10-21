@@ -30,27 +30,35 @@ body {
 [class*="card"] {
 	display: grid;
 	grid-template-columns: min-content auto;
-	grid-template-rows: auto auto;
+	grid-template-rows: auto auto auto;
 	grid-template-areas:
 	"pic info"
-	"par par";
+	"par par"
+	"par2 par2";
+	align-items: center;
 	border-radius: .5rem;
 	padding: 2rem;
+	gap: 1rem;
 }
 
 [class*="card"] img {
 	grid-area: pic;
-	background-color: orange;
+	width: 2.2rem;
+	border-radius: 50%;
 }
 
-[class*="card"] > div {
+[class*="card"] .info {
 	grid-area: info;
-	background-color: red;
+	font-size: .8rem;
 }
 
-[class*="card"] > p {
+[class*="card"] .par {
 	grid-area: par;
-	background-color: aqua;
+	font-size: 1.2rem;
+}
+
+[class*="card"] .par2 {
+	grid-area: par2;
 }
 
 .card1 {
@@ -63,7 +71,8 @@ body {
 	color: white;
 }
 
-.card3 {
+.card3,
+.card5 {
 	background-color: white;
 	color: black;
 }
@@ -73,9 +82,30 @@ body {
 	color: white;
 }
 
-.card5 {
-	background-color: white;
-	color:black;
+.card1 .par2,
+.card2 .par2,
+.card4 .par2 {
+	color: hsl(0, 0%, 81%);
+}
+
+.card3 .par2,
+.card5 .par2 {
+	color: hsla(0, 0%, 0%, 60%);
+}
+
+.card1 .info,
+.card2 .info,
+.card4 .info {
+	color: hsl(210, 46%, 95%);
+}
+
+.vergrad {
+	opacity: .6;
+}
+
+.card1 img,
+.card4 img {
+	border: 2px solid hsla(0, 0%, 81%, .4);
 }
 
 .attribution {
